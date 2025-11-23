@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Namrata ❤️</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;600;700&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #FFD1DC;
+            /* Pastel Pink */
+            --secondary-color: #E6E6FA;
+            /* Lavender */
+            --accent-color: #FF69B4;
+            /* Hot Pink for accents */
+            --text-color: #4A4A4A;
+            --glass-bg: rgba(255, 255, 255, 0.25);
+            --glass-border: rgba(255, 255, 255, 0.5);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Floating Hearts Background */
+        .hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            bottom: -100px;
+            color: rgba(255, 105, 180, 0.6);
+            animation: floatUp 10s linear infinite, pulse 2s ease-in-out infinite;
+            font-size: 24px;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            animation: fadeInDown 1.5s ease-out;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 3.5rem;
+            color: #ff6b81;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 0.5rem;
+            animation: heartbeat 3s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                transform: scale(1);
+            }
+
+            5% {
+                transform: scale(1.05);
+            }
+
+            10% {
+                transform: scale(1);
+            }
+
+            15% {
+                transform: scale(1.05);
+            }
+
+            20% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #6c5ce7;
+            font-weight: 600;
+            opacity: 0;
+            animation: fadeIn 2s ease-out 1s forwards;
+        }
+
+        /* Main Grid */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        /* Glassmorphism Card */
+        .card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            /* Hidden initially for staggered animation */
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        /* Staggered Animation Delays */
+        .card:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+
+        .card:nth-child(2) {
+            animation-delay: 0.7s;
+        }
+
+        .card:nth-child(3) {
+            animation-delay: 0.9s;
+        }
+
+        .card:nth-child(4) {
+            animation-delay: 1.1s;
+        }
+
+        .card:nth-child(5) {
+            animation-delay: 1.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 45px 0 rgba(31, 38, 135, 0.25);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: 0.5s;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            color: #ff6b81;
+            margin-bottom: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .card:hover .card-icon {
+            transform: rotate(15deg) scale(1.2);
+        }
+
+        .card-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #2d3436;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: #fff0f5;
+            padding: 3rem;
+            border-radius: 25px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            transform: scale(0.7);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            border: 4px solid #ffb7b2;
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+            animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #aaa;
+            transition: color 0.3s;
+        }
+
+        .close-btn:hover {
+            color: #ff6b81;
+            transform: rotate(90deg);
+        }
+
+        .modal-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #555;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+        }
+
+        .modal-overlay.active .modal-text {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Music Player */
+        .music-player {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            z-index: 100;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s;
+            animation: bounce 2s infinite;
+        }
+
+        .music-player:hover {
+            transform: scale(1.1);
+            animation: none;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .music-icon {
+            font-size: 1.5rem;
+            color: #ff6b81;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hearts-container" id="heartsContainer"></div>
+
+    <header>
+        <h1>For My Dearest Namrata ❤️</h1>
+        <p class="subtitle">A little corner of the internet, just for you.</p>
+    </header>
+
+    <div class="card-grid">
+        <!-- Card 1 -->
+        <div class="card" onclick="openModal('special')">
+            <div class="card-icon"><i class="fas fa-star"></i></div>
+            <div class="card-title">Why You’re Special</div>
+            <p>Click to see why...</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="card" onclick="openModal('reasons')">
+            <div class="card-icon"><i class="fas fa-heart"></i></div>
+            <div class="card-title">Reasons I Love You</div>
+            <p>Countless reasons...</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card" onclick="openModal('better')">
+            <div class="card-icon"><i class="fas fa-sun"></i></div>
+            <div class="card-title">My Life is Better</div>
+            <p>Because of you...</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="card" onclick="openModal('favorite')">
+            <div class="card-icon"><i class="fas fa-smile-beam"></i></div>
+            <div class="card-title">My Favorite Things</div>
+            <p>Everything about you...</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card" onclick="openModal('matter')">
+            <div class="card-icon"><i class="fas fa-gem"></i></div>
+            <div class="card-title">You Matter</div>
+            <p>More than you know...</p>
+        </div>
+    </div>
+
+    <!-- Modal Structure -->
+    <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal(event)">&times;</span>
+            <h2 id="modalTitle" style="font-family: 'Dancing Script', cursive; color: #ff6b81; margin-bottom: 1rem;">
+            </h2>
+            <div id="modalBody" class="modal-text"></div>
+        </div>
+    </div>
+
+    <!-- Music Player Control -->
+    <div class="music-player" onclick="toggleMusic()">
+        <i class="fas fa-music music-icon" id="musicIcon"></i>
+    </div>
+    <audio id="bgMusic" loop>
+        <!-- Placeholder source - User needs to add their own or I can find a royalty free one -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Floating Hearts Logic
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '❤';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 7 + 's'; // 7-10s
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px'; // 10-30px
+            document.getElementById('heartsContainer').appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 10000);
+        }
+
+        setInterval(createHeart, 300);
+
+        // Modal Logic
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalBody = document.getElementById('modalBody');
+
+        const content = {
+            'special': {
+                title: "Why You’re Special to Me",
+                text: "Namrata, you are special not just because of who you are, but because of how you make me feel. Your kindness, your smile, and your gentle soul light up my world in ways I never thought possible. You are a rare gem."
+            },
+            'reasons': {
+                title: "Reasons I Love You",
+                text: "1. Your infectious laughter.<br>2. The way you care for others.<br>3. Your beautiful eyes that speak volumes.<br>4. How you support me in everything.<br>5. Just being YOU."
+            },
+            'better': {
+                title: "How You Make My Life Better",
+                text: "Before you, days were just days. Now, every day is an opportunity to see you, talk to you, or just think about you. You bring color to my grey skies and warmth to my coldest days."
+            },
+            'favorite': {
+                title: "My Favorite Things About You",
+                text: "I love your voice, it's my favorite melody. I love your determination. I love your sense of humor. But most of all, I love the way you look at me."
+            },
+            'matter': {
+                title: "You Matter More Than You Know",
+                text: "Sometimes life gets tough, but I want you to know that you are incredibly important. You are loved, you are cherished, and you are enough. Always."
+            }
+        };
+
+        function openModal(key) {
+            modalTitle.innerHTML = content[key].title;
+            modalBody.innerHTML = content[key].text;
+            modalOverlay.classList.add('active');
+        }
+
+        function closeModal(event) {
+            if (event.target === modalOverlay || event.target.classList.contains('close-btn')) {
+                modalOverlay.classList.remove('active');
+            }
+        }
+
+        // Music Logic
+        const bgMusic = document.getElementById('bgMusic');
+        const musicIcon = document.getElementById('musicIcon');
+        let isPlaying = false;
+
+        function toggleMusic() {
+            if (isPlaying) {
+                bgMusic.pause();
+                musicIcon.classList.remove('fa-pause');
+                musicIcon.classList.add('fa-music');
+            } else {
+                bgMusic.play().catch(error => console.log("Playback prevented: ", error));
+                musicIcon.classList.remove('fa-music');
+                musicIcon.classList.add('fa-pause');
+            }
+            isPlaying = !isPlaying;
+        }
+    </script>
+</body>
+
+</html>
